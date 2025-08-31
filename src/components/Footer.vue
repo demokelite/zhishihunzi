@@ -8,8 +8,8 @@
           <div class="footer-column">
             <div class="logo">
               <a href="#" class="logo-link">
-                <div class="logo-icon">ZM</div>
-                <span class="logo-text">张小明</span>
+                <div class="logo-icon">Z</div>
+                <span class="logo-text">知识混子</span>
               </a>
             </div>
             <p class="footer-description">
@@ -90,7 +90,7 @@
       <div class="container">
         <div class="footer-bottom-content">
           <div class="copyright">
-            © 2023 张小明. 保留所有权利.
+            © 2025 知识混子. 保留所有权利.
           </div>
           <div class="footer-bottom-links">
             <a href="#" class="footer-bottom-link">隐私政策</a>
