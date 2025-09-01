@@ -6,8 +6,8 @@
     <!-- 页面标题 -->
     <section class="page-title-section">
       <div class="container">
-        <h1>随机图片2</h1>
-        <p>探索精美的随机图片内容</p>
+        <h1>白丝图片</h1>
+        <p>探索精美的白丝图片内容</p>
       </div>
     </section>
 
