@@ -47,57 +47,8 @@
     </section>
 
     <!-- 精选作品（已注释） -->
-    <!-- 
-    <section class="portfolio-preview-section">
-      <div class="section-title">
-        <h2>精选作品</h2>
-        <div class="title-underline"></div>
-        <el-button 
-          type="text"
-          @click="navigateToPortfolio"
-          class="view-all-btn"
-        >
-          查看全部 <i class="el-icon-arrow-right"></i>
-        </el-button>
-      </div>
-      
-      <div class="portfolio-grid">
-        <div class="portfolio-item" v-for="item in portfolioItems" :key="item.id">
-          <div class="portfolio-image">
-            <img :src="item.image" :alt="item.title" />
-            <div class="portfolio-overlay">
-              <h4>{{ item.title }}</h4>
-              <p>{{ item.category }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
 
     <!-- 客户评价（已注释） -->
-    <!-- 
-    <section class="testimonials-section">
-      <div class="section-title">
-        <h2>客户评价</h2>
-        <div class="title-underline"></div>
-      </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonial-item" v-for="testimonial in testimonials" :key="testimonial.id">
-          <i class="el-icon-quote-left quote-icon"></i>
-          <p class="testimonial-text">{{ testimonial.content }}</p>
-          <div class="testimonial-author">
-            <img :src="testimonial.avatar" :alt="testimonial.name" class="author-avatar" />
-            <div>
-              <h4>{{ testimonial.name }}</h4>
-              <p>{{ testimonial.position }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
 
     <!-- 页脚 -->
     <Footer />
@@ -146,29 +97,31 @@ export default {
           color: '#F56C6C'
         }
       ],
-      // 精选作品数据（已注释）
-      /*
+      // 精选作品数据
       portfolioItems: [
         {
           id: 1,
           title: '电子商务网站',
           category: 'Web开发',
-          image: 'https://picsum.photos/id/0/800/600'
+          image: 'https://picsum.photos/id/0/800/600',
+          description: '一个功能齐全的电子商务平台，支持产品展示、购物车、支付等功能'
         },
         {
           id: 2,
           title: '企业管理系统',
           category: '应用开发',
-          image: 'https://picsum.photos/id/1/800/600'
+          image: 'https://picsum.photos/id/1/800/600',
+          description: '为企业打造的全面管理系统，包括客户管理、订单管理和数据分析等模块'
         },
         {
           id: 3,
           title: '个人博客平台',
           category: 'Web开发',
-          image: 'https://picsum.photos/id/2/800/600'
+          image: 'https://picsum.photos/id/2/800/600',
+          description: '一个现代化的博客系统，支持富文本编辑、标签分类和评论功能'
         }
       ],
-      // 客户评价数据（已注释）
+      // 客户评价数据
       testimonials: [
         {
           id: 1,
@@ -184,14 +137,25 @@ export default {
           position: '产品经理 @ XYZ公司',
           avatar: 'https://picsum.photos/id/1002/100/100'
         }
-      ]
-      */
+      ],
+      activePortfolioId: null,
+      currentTestimonialIndex: 0,
+      testimonialSliderInterval: null
     };
   },
   mounted() {
     // 添加页面进入动画
     const heroSection = document.querySelector('.hero-section');
     heroSection.classList.add('animate-in');
+    
+    // 启动客户评价轮播
+    this.startTestimonialSlider();
+  },
+  beforeDestroy() {
+    // 清除定时器
+    if (this.testimonialSliderInterval) {
+      clearInterval(this.testimonialSliderInterval);
+    }
   },
   methods: {
     navigateToPortfolio() {
@@ -199,6 +163,35 @@ export default {
     },
     navigateToAbout() {
       this.$router.push('/about');
+    },
+    showPortfolioDetails(id) {
+      this.activePortfolioId = id;
+    },
+    hidePortfolioDetails() {
+      this.activePortfolioId = null;
+    },
+    viewPortfolioDetails(id) {
+      // 这里可以添加查看作品详情的逻辑，比如跳转到详情页或显示模态框
+      this.$message({
+        message: '查看作品ID: ' + id,
+        type: 'info'
+      });
+    },
+    // 自动轮播客户评价
+    startTestimonialSlider() {
+      if (this.testimonials.length > 1) {
+        this.testimonialSliderInterval = setInterval(() => {
+          this.currentTestimonialIndex = (this.currentTestimonialIndex + 1) % this.testimonials.length;
+        }, 5000);
+      }
+    },
+    // 切换到上一个评价
+    prevTestimonial() {
+      this.currentTestimonialIndex = (this.currentTestimonialIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    },
+    // 切换到下一个评价
+    nextTestimonial() {
+      this.currentTestimonialIndex = (this.currentTestimonialIndex + 1) % this.testimonials.length;
     }
   }
 };
@@ -339,8 +332,226 @@ export default {
   line-height: 1.6;
 }
 
-/* 精选作品和客户评价样式已移除 */
-/* 如需恢复，请参考原始代码 */
+/* 精选作品样式 */
+.portfolio-preview-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.view-all-btn {
+  color: #667eea;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.view-all-btn:hover {
+  color: #5a67d8;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.portfolio-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.portfolio-overlay.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-overlay h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.portfolio-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.portfolio-detail-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-detail-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+/* 客户评价样式 */
+.testimonials-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 添加背景装饰 */
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.testimonials-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-item {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+  font-size: 36px;
+  color: #667eea;
+  margin-bottom: 20px;
+  opacity: 0.2;
+}
+
+.testimonial-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+}
+
+.testimonial-author h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.testimonial-author p {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+/* 轮播控制按钮 */
+.testimonial-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.testimonial-control-btn {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.testimonial-control-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.1);
+}
 
 /* 响应式设计 */
 @media (max-width: 768px) {

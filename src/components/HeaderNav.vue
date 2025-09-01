@@ -41,32 +41,23 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link 
-                to="/blog" 
+              <a 
+                href="https://wx.mail.qq.com" 
                 class="nav-link"
-                :class="{ active: currentRoute === '/blog' }"
-              >
-                博客
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link 
-                to="/contact" 
-                class="nav-link"
-                :class="{ active: currentRoute === '/contact' }"
+                target="_blank"
               >
                 联系我
-              </router-link>
+              </a>
             </li>
           </ul>
         </nav>
         
         <!-- 联系按钮 - 桌面版 -->
         <div class="contact-button-desktop">
-          <router-link to="/contact" class="button">
+          <a href="https://wx.mail.qq.com" class="button" target="_blank">
             <i class="el-icon-message"></i>
             <span>联系我</span>
-          </router-link>
+          </a>
         </div>
         
         <!-- 移动端菜单按钮 -->
@@ -112,41 +103,31 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link 
-              to="/portfolio" 
-              class="nav-link"
-              :class="{ active: currentRoute === '/portfolio' }"
-              @click="toggleMobileMenu"
-            >
-              作品集
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              to="/blog" 
-              class="nav-link"
-              :class="{ active: currentRoute === '/blog' }"
-              @click="toggleMobileMenu"
-            >
-              博客
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              to="/contact" 
-              class="nav-link"
-              :class="{ active: currentRoute === '/contact' }"
-              @click="toggleMobileMenu"
-            >
-              联系我
-            </router-link>
-          </li>
+              <router-link 
+                to="/portfolio" 
+                class="nav-link"
+                :class="{ active: currentRoute === '/portfolio' }"
+                @click="toggleMobileMenu"
+              >
+                作品集
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a 
+                href="https://example.com/contact" 
+                class="nav-link"
+                :class="{ active: currentRoute === '/contact' }"
+                target="_blank"
+              >
+                联系我
+              </a>
+            </li>
         </ul>
         <div class="mobile-menu-footer">
-          <router-link to="/contact" class="button" @click="toggleMobileMenu">
+          <a href="https://example.com/contact" class="button" target="_blank">
             <i class="el-icon-message"></i>
             <span>联系我</span>
-          </router-link>
+          </a>
           <div class="social-links">
             <a href="#" class="social-link"><i class="el-icon-github"></i></a>
             <a href="#" class="social-link"><i class="el-icon-link"></i></a>

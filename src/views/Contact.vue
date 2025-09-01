@@ -39,7 +39,7 @@
                 </div>
                 <div class="contact-text">
                   <h3>邮箱</h3>
-                  <p>contact@zhishihunzi.com</p>
+                  <p>871684184@qq.com</p>
                 </div>
               </div>
               
@@ -52,16 +52,6 @@
                   <p>北京市海淀区中关村科技园区8号楼</p>
                 </div>
               </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="el-icon-time"></i>
-                </div>
-                <div class="contact-text">
-                  <h3>工作时间</h3>
-                  <p>周一至周五: 9:00 - 18:00</p>
-                </div>
-              </div>
             </div>
             
             <div class="social-links">
@@ -72,7 +62,7 @@
             </div>
           </div>
           
-          <!-- 联系表单 -->
+          <!-- 联系表单（已注释）
           <div class="contact-form">
             <h2>发送消息</h2>
             <el-form 
@@ -129,20 +119,21 @@
               </el-form-item>
             </el-form>
           </div>
+          -->
         </div>
       </div>
     </section>
 
-    <!-- 地图部分 -->
-    <section class="map-section">
+    <!-- 地图部分（已注释） -->
+    <!-- <section class="map-section">
       <div class="map-container">
-        <!-- 这里可以嵌入实际的地图组件，现在使用占位图 -->
+        这里可以嵌入实际的地图组件，现在使用占位图
         <img src="https://picsum.photos/id/1031/1920/600" alt="地图" class="map-image" />
       </div>
-    </section>
+    </section> -->
 
-    <!-- 常见问题 -->
-    <section class="faq-section">
+    <!-- 常见问题（已注释） -->
+    <!-- <section class="faq-section">
       <div class="container">
         <div class="section-title">
           <h2>常见问题</h2>
@@ -160,7 +151,7 @@
           </el-collapse-item>
         </el-collapse>
       </div>
-    </section>
+    </section> -->
 
     <!-- 页脚 -->
     <Footer />
@@ -343,7 +334,8 @@ export default {
 }
 
 .contact-info {
-  flex: 0 0 400px;
+  margin: 0 auto; 
+  max-width: 600px;
 }
 
 .contact-form {

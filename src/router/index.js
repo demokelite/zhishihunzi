@@ -3,7 +3,6 @@ import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
 import Portfolio from '@/views/Portfolio.vue';
-import Blog from '@/views/Blog.vue';
 import Contact from '@/views/Contact.vue';
 import RandomVideo from '@/views/random_pages/RandomVideo.vue';
 import RandomImage from '@/views/random_pages/RandomImage.vue';
@@ -83,11 +82,6 @@ export default new Router({
       path: '/random-image8',
       name: 'random-image8',
       component: RandomImage8
-    },
-    {
-      path: '/blog',
-      name: 'blog',
-      component: Blog
     },
     {
       path: '/contact',
