@@ -46,7 +46,8 @@
       </div>
     </section>
 
-    <!-- 精选作品 -->
+    <!-- 精选作品（已注释） -->
+    <!-- 
     <section class="portfolio-preview-section">
       <div class="section-title">
         <h2>精选作品</h2>
@@ -72,8 +73,10 @@
         </div>
       </div>
     </section>
+    -->
 
-    <!-- 客户评价 -->
+    <!-- 客户评价（已注释） -->
+    <!-- 
     <section class="testimonials-section">
       <div class="section-title">
         <h2>客户评价</h2>
@@ -94,6 +97,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- 页脚 -->
     <Footer />
@@ -142,6 +146,8 @@ export default {
           color: '#F56C6C'
         }
       ],
+      // 精选作品数据（已注释）
+      /*
       portfolioItems: [
         {
           id: 1,
@@ -162,6 +168,7 @@ export default {
           image: 'https://picsum.photos/id/2/800/600'
         }
       ],
+      // 客户评价数据（已注释）
       testimonials: [
         {
           id: 1,
@@ -178,6 +185,7 @@ export default {
           avatar: 'https://picsum.photos/id/1002/100/100'
         }
       ]
+      */
     };
   },
   mounted() {
@@ -331,143 +339,8 @@ export default {
   line-height: 1.6;
 }
 
-/* 精选作品样式 */
-.portfolio-preview-section {
-  padding: 100px 0;
-}
-
-.view-all-btn {
-  font-size: 16px;
-  margin-top: 10px;
-  color: #409EFF;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.portfolio-item {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.portfolio-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.portfolio-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-image img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover .portfolio-image img {
-  transform: scale(1.1);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 20px;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-  transform: translateY(0);
-}
-
-.portfolio-overlay h4 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.portfolio-overlay p {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* 客户评价样式 */
-.testimonials-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.testimonials-section .section-title h2 {
-  color: white;
-}
-
-.testimonials-slider {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.testimonial-item {
-  text-align: center;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-}
-
-.quote-icon {
-  font-size: 48px;
-  opacity: 0.3;
-  margin-bottom: 20px;
-}
-
-.testimonial-text {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.author-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-}
-
-.testimonial-author h4 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.testimonial-author p {
-  font-size: 14px;
-  opacity: 0.8;
-}
+/* 精选作品和客户评价样式已移除 */
+/* 如需恢复，请参考原始代码 */
 
 /* 响应式设计 */
 @media (max-width: 768px) {

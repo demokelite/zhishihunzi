@@ -39,7 +39,7 @@
                 </div>
                 <div class="contact-text">
                   <h3>邮箱</h3>
-                  <p>zhangming@example.com</p>
+                  <p>contact@zhishihunzi.com</p>
                 </div>
               </div>
               

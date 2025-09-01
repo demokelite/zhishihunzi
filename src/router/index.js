@@ -14,6 +14,9 @@ import RandomImage5 from '@/views/random_pages/RandomImage5.vue';
 import RandomImage6 from '@/views/random_pages/RandomImage6.vue';
 import RandomImage7 from '@/views/random_pages/RandomImage7.vue';
 import RandomImage8 from '@/views/random_pages/RandomImage8.vue';
+import PrivacyPolicy from '@/views/PrivacyPolicy.vue';
+import TermsOfService from '@/views/TermsOfService.vue';
+import CookiePolicy from '@/views/CookiePolicy.vue';
 
 Vue.use(Router);
 
@@ -90,6 +93,21 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/privacy-policy',
+      name: 'privacy-policy',
+      component: PrivacyPolicy
+    },
+    {
+      path: '/terms-of-service',
+      name: 'terms-of-service',
+      component: TermsOfService
+    },
+    {
+      path: '/cookie-policy',
+      name: 'cookie-policy',
+      component: CookiePolicy
     }
   ],
   // eslint-disable-next-line no-unused-vars

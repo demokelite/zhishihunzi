@@ -81,8 +81,8 @@
       <div class="mobile-menu-header">
         <div class="logo">
           <router-link to="/" class="logo-link">
-            <div class="logo-icon">ZM</div>
-            <span class="logo-text">张小明</span>
+            <div class="logo-icon">Z</div>
+            <span class="logo-text">知识混子</span>
           </router-link>
         </div>
         <div class="mobile-menu-close" @click="toggleMobileMenu">

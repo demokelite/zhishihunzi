@@ -7,19 +7,19 @@
           <!-- 个人信息 -->
           <div class="footer-column">
             <div class="logo">
-              <a href="#" class="logo-link">
-                <div class="logo-icon">ZM</div>
-                <span class="logo-text">张小明</span>
-              </a>
+              <router-link to="/" class="logo-link">
+                <div class="logo-icon">Z</div>
+                <span class="logo-text">知识混子</span>
+              </router-link>
             </div>
             <p class="footer-description">
               专注于Web开发和UI/UX设计，热衷于创造美观且功能强大的数字产品。
             </p>
             <div class="social-links">
-              <a href="#" class="social-link" title="GitHub"><i class="el-icon-github"></i></a>
-              <a href="#" class="social-link" title="LinkedIn"><i class="el-icon-link"></i></a>
-              <a href="#" class="social-link" title="Twitter"><i class="el-icon-document"></i></a>
-              <a href="#" class="social-link" title="Instagram"><i class="el-icon-picture"></i></a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub"><i class="el-icon-github"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn"><i class="el-icon-link"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter"><i class="el-icon-document"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="el-icon-picture"></i></a>
             </div>
           </div>
           
@@ -45,7 +45,7 @@
               </li>
               <li class="contact-item">
                 <i class="el-icon-message"></i>
-                <span>zhangming@example.com</span>
+                <span>contact@zhishihunzi.com</span>
               </li>
               <li class="contact-item">
                 <i class="el-icon-location"></i>
@@ -58,29 +58,6 @@
             </ul>
           </div>
           
-          <!-- 订阅 -->
-          <div class="footer-column">
-            <h3 class="footer-title">订阅我的博客</h3>
-            <p class="subscribe-description">
-              订阅我的博客，获取最新的技术文章和项目更新。
-            </p>
-            <form class="subscribe-form">
-              <el-input 
-                v-model="email"
-                placeholder="输入您的邮箱"
-                class="subscribe-input"
-                :validate-event="false"
-              />
-              <el-button 
-                type="primary"
-                @click="subscribe"
-                :loading="subscribing"
-                class="subscribe-button"
-              >
-                订阅
-              </el-button>
-            </form>
-          </div>
         </div>
       </div>
     </div>
@@ -90,12 +67,12 @@
       <div class="container">
         <div class="footer-bottom-content">
           <div class="copyright">
-            © 2023 张小明. 保留所有权利.
+            © 2023 知识混子. 保留所有权利.
           </div>
           <div class="footer-bottom-links">
-            <a href="#" class="footer-bottom-link">隐私政策</a>
-            <a href="#" class="footer-bottom-link">服务条款</a>
-            <a href="#" class="footer-bottom-link">Cookie政策</a>
+            <a href="/privacy-policy" class="footer-bottom-link">隐私政策</a>
+            <a href="/terms-of-service" class="footer-bottom-link">服务条款</a>
+            <a href="/cookie-policy" class="footer-bottom-link">Cookie政策</a>
           </div>
         </div>
       </div>

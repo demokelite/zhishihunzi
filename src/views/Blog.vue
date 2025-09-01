@@ -261,7 +261,7 @@ export default {
           date: '2023年6月15日',
           category: 'tech',
           tags: ['vue', 'javascript', 'frontend'],
-          author: '张明',
+          author: '知识混子',
           views: 1243,
           comments: 35,
           commentsList: [
@@ -290,7 +290,7 @@ export default {
           date: '2023年6月8日',
           category: 'tech',
           tags: ['performance', 'frontend', 'javascript'],
-          author: '张明',
+          author: '知识混子',
           views: 2156,
           comments: 47,
           commentsList: [
@@ -312,7 +312,7 @@ export default {
           date: '2023年5月25日',
           category: 'life',
           tags: ['remote', 'work', 'lifestyle'],
-          author: '张明',
+          author: '知识混子',
           views: 1876,
           comments: 52,
           commentsList: [
@@ -334,7 +334,7 @@ export default {
           date: '2023年5月18日',
           category: 'tech',
           tags: ['javascript', 'async', 'promise'],
-          author: '张明',
+          author: '知识混子',
           views: 3245,
           comments: 67,
           commentsList: []
@@ -348,7 +348,7 @@ export default {
           date: '2023年1月5日',
           category: 'study',
           tags: ['learning', 'career', 'frontend', 'backend'],
-          author: '张明',
+          author: '知识混子',
           views: 2890,
           comments: 89,
           commentsList: []
@@ -362,7 +362,7 @@ export default {
           date: '2023年4月10日',
           category: 'travel',
           tags: ['japan', 'travel', 'culture'],
-          author: '张明',
+          author: '知识混子',
           views: 3678,
           comments: 102,
           commentsList: []

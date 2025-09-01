@@ -33,7 +33,7 @@
             <div class="personal-info">
               <div class="info-item">
                 <span class="info-label">姓名:</span>
-                <span class="info-value">张明</span>
+              <span class="info-value">知识混子</span>
               </div>
               <div class="info-item">
                 <span class="info-label">职业:</span>
@@ -45,7 +45,7 @@
               </div>
               <div class="info-item">
                 <span class="info-label">邮箱:</span>
-                <span class="info-value">zhangming@example.com</span>
+              <span class="info-value">contact@zhishihunzi.com</span>
               </div>
             </div>
             
